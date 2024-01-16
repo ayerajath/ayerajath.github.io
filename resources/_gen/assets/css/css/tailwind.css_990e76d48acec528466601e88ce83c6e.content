@@ -946,9 +946,8 @@ video {
 .stroke-2 {
   stroke-width: 2;
 }
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.p-4 {
+  padding: 1rem;
 }
 .py-10 {
   padding-top: 2.5rem;
@@ -1324,6 +1323,16 @@ nav a.active {
   align-items: center;
   justify-content: space-between;
 }
+@media only screen 
+  and (min-device-width : 320px) 
+  and (max-device-width : 480px) {
+    .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  }
 .header .toggle-theme {
   height: 1.5rem;
   width: 1.5rem;
@@ -1367,6 +1376,10 @@ nav a.active {
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:items-start {
+    align-items: flex-start;
   }
 
   .sm\:justify-end {

@@ -3,8 +3,17 @@ title: "Hello There!"
 draft: false
 ---
 
-Name's **Rajath Aithal**. Based out of Bangalore. 
+My name is **Rajath Aithal**. Based out of Bangalore. 
 
 I'm currently working as a **Senior Software Engineer** at Playsimple Games. 
 
-I love to work on a space with data. Data has a lot of answers to questions that we seek. 
+I’ve adored programming/coding. I’m really interested in startups, SaaS, and Product. Attempting to learn more about finance and economics as well.
+
+Yes, I try to be a jack of all trades.
+
+Here's a panda, because I like them. And, the world needs a little more love & happiness.
+
+{{< img
+  src="panda.jpg"
+  alt="panda" >}}
+
