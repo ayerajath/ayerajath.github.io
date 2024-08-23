@@ -11,9 +11,4 @@ I’ve adored programming/coding. I’m really interested in startups, SaaS, and
 
 Yes, I try to be a jack of all trades.
 
-Here's a panda, because I like them. And, the world needs a little more love & happiness.
-
-{{< img
-  src="panda.jpg"
-  alt="panda" >}}
-
+The world is a wonderful place, but is filled with hatred against each other. I wish to change that and spread love, kindness, and smiles whenever I can. 
