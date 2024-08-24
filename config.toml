@@ -82,4 +82,15 @@ weight = 3
     name = "email"
     link = "rajathaithal@gmail.com"  # no need for "mailto:" in the head
 
-  
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "index"
+
+[services.rss]
+  limit = 10
