@@ -15,7 +15,6 @@ name = "Home"
 url = "/"
 weight = 1
 
-
 [[menu.main]]
 name = "About"
 url = "/about"
@@ -48,7 +47,7 @@ weight = 3
   colortheme = "white" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = false # use asynchronous tracking. Synchronous tracking by default
-  showAllPostsArchive = false # default
+  showAllPostsArchive = true # default
   logo = "images/cat-eyes.jpg"
 
   # Home page settings
