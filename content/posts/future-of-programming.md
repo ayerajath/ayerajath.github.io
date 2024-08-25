@@ -5,7 +5,7 @@ category: tech
 draft: false
 ---
 
-Cursor and Claude are the future of coding. For programming and developing, I haven't come across better tools than these.
+With the introduction of tools like Cursor. And the LLMs(especially Claude) getting better at programming and coding. These definitely look like the future. We can only expect these to get better, even if marginally. 
 
 The rate at which we can ship stuff is faster than ever. 
 
