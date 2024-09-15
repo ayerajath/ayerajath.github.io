@@ -1,6 +1,6 @@
 ---
 title: Product Engineer: My Journey and Aspirations
-date: 2024-09-12 12:00:00
+date: 2024-09-12 01:00:00
 category: tech
 draft: false
 ---
