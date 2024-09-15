@@ -1,5 +1,5 @@
 ---
-title: Product Engineering: A bet for the future.
+title: Product Engineering - A bet for the future
 date: 2024-09-12 01:00:00
 category: tech
 draft: false
