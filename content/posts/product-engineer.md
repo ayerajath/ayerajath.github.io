@@ -3,6 +3,7 @@ title: Product Engineering - A bet for the future
 date: 2024-09-12 01:00:00
 category: tech
 draft: false
+tags: [general, tech]
 ---
 
 When I started coding, I thought the experience layer wasn't for me. I was wrong.
