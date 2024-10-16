@@ -2,8 +2,7 @@
 title: Scale - Different in every company
 date: 2024-10-15 01:00:00
 category: tech
-draft: false
-tags: [general]
+draft: true
 ---
 
 Scale is a very vague term. I have personally used it to define only engineering scale. But even here, there are multiple ways to define it.

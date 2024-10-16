@@ -3,7 +3,6 @@ title: Future of Programming
 date: 2024-08-24 01:00:00
 category: tech
 draft: false
-tags: [general, tech]
 ---
 
 With the introduction of tools like Cursor. And the LLMs(especially Claude) getting better at programming and coding. These definitely look like the future. We can only expect these to get better, even if marginally. 
