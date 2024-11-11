@@ -19,7 +19,7 @@ The more I build AI systems, the more I realize that we're mostly just building 
 
 I see these big companies, ones that could easily afford to buy ready-made solutions, choosing to build instead. Why? Because building with AI is becoming dirt cheap and works great for their specific use cases. Each application can be customized exactly how they want it. How can one vendor's solution answer all these different use cases? That's why companies are building their own.
 
-It's just an integration with your favorite LLM. And you can do so much with it. You get the results, you can customize them, you can add your own logic to it, play with it. Just another integration!
+It's just an integration with your favorite LLM. And you can do so much with it. You get the results, you can customize them, you can add your own logic to it, play with it. Just another integration! We shall be better integrators for sure. Something to take from this. 
 
 Hats off to companies like OpenAI, Anthropic, Google, etc. They're making it incredibly easy for us to build these applications. They've given us the LEGO blocks - now we just need to put them together in ways that make sense for our needs.
 
