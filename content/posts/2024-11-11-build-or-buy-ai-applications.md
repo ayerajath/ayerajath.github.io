@@ -21,6 +21,8 @@ I see these big companies, ones that could easily afford to buy ready-made solut
 
 It's just an integration with your favorite LLM. And you can do so much with it. You get the results, you can customize them, you can add your own logic to it, play with it. Just another integration! We shall be better integrators for sure. Something to take from this. 
 
+You know having said that, there are companies that just work in this space. Applications that are built for specific use cases that something like GPT or Claude can't do. Observability is one such application.
+
 Hats off to companies like OpenAI, Anthropic, Google, etc. They're making it incredibly easy for us to build these applications. They've given us the LEGO blocks - now we just need to put them together in ways that make sense for our needs.
 
 The build vs. buy question isn't going away, but with AI, the scales are definitely tipping towards 'build' for me.
