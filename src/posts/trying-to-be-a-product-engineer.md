@@ -10,17 +10,7 @@ When I started coding, I thought the experience layer wasn't for me. I was wrong
 
 I believed backend was where the real action happened. I still love it, and there's a charm about backend and systems that draws me in.
 
-But to truly understand your impact, you need to grasp the experience layer. Every user interaction with your product is a learning opportunity:
-- How do users find the product?
-- What do they do?
-- What do they think?
-- What do they like or dislike?
-
-As an engineer, it's crucial to align your goals:
-1. Company goals
-2. Team goals
-3. Product goals
-4. Personal goals
+But to truly understand your impact, you need to grasp the experience layer. Every user interaction with your product is a learning opportunity. Think about how users first discover what you’ve built, the actions they take, and the thoughts or feelings that arise as they engage with it. Their likes, dislikes, and overall impressions all become valuable feedback.
 
 The biggest wins often come from product goals.
 
