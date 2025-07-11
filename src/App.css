@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: 'Lora', 'Inter', 'Rubik', sans-serif;
-  font-weight: 500;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +34,7 @@ body {
 
 .App-header nav .nav-top a {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #000;
   margin-left: 0; /* Reset margin for the name link */
 }
