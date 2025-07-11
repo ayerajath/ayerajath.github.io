@@ -11,7 +11,8 @@ const HomePage = () => {
           Welcome to this tiny corner of the internet. I hope to make it a little more interesting.
         </p>
         <p>
-          I'm currently working at LaunchDarkly. Joined via an acquisition of my previous company, Houseware!
+          I'm currently working at <a href="https://www.launchdarkly.com" target="_blank" rel="noopener noreferrer">LaunchDarkly</a>. Joined via an acquisition of my previous company, <a href="https://www.houseware.io" target="_blank" rel="noopener noreferrer">Houseware</a>!
+          We're building a Product Analytics platform inside of LaunchDarkly.
         </p>
 
         <p>
