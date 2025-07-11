@@ -15,7 +15,16 @@ const HomePage = () => {
         </p>
 
         <p>
-          I'm interested in almost everything. Everything has a story.
+          I'm interested in almost everything. I love to listen to people's stories. I love to learn.
+        </p>
+
+        <p>
+          If there are some things that I spend most of my time on, it's building products, learning new stuff, finance/stock markets.
+        </p>
+
+        <p>
+          Outside all of this, I love to play sports, watch movies and play games. 
+          I'm trying to run more, I have some goals that I'm trying to achieve. Let's see how it goes.
         </p>
       </section>
 
