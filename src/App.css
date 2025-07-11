@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  font-family: 'Lora', 'Inter', 'Rubik', sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  padding: 10px 0; /* Reduced top/bottom padding */
+  /* border-bottom: 1px solid #eee; */ /* Removed from here */
+}
+
+.App-header nav {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column; /* Stack nav items vertically */
+  align-items: flex-start; /* Align items to the start (left) */
+  border-bottom: 1px solid #eee; /* Added here */
+  padding-bottom: 10px; /* Added padding below nav items, above the new border */
+}
+
+.App-header nav .nav-top {
+  margin-bottom: 5px; /* Reduced space between name and links */
+}
+
+.App-header nav .nav-top a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-left: 0; /* Reset margin for the name link */
+}
+
+.App-header nav .nav-bottom a {
+  color: #333333;
+  margin-left: 0; /* Align all bottom links to the start */
+  margin-right: 25px; /* Add spacing between bottom links */
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.App-header nav .nav-bottom a:last-child {
+  margin-right: 0;
+}
+
+.App-header nav a {
+  /* Remove general margin-left from here as it's handled by nav-top/nav-bottom */
+  /* margin-left: 25px; */ 
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none; /* Remove underline from links */
+}
+
+.App-header nav a:first-child {
+  /* These specific styles are now handled by .nav-top a */
+  /* margin-left: 0; */
+  /* font-size: 1.5rem; */
+  /* font-weight: 700; */
+  /* color: #000; */
+}
+
+.App-header nav div a:hover {
+  color: #007acc;
+  text-decoration: none;
+}
+
+
+main {
+  flex-grow: 1;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.App-footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Post List Styling */
+.blog-list {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-list li {
+  padding-bottom: 8px; /* Reduced from 20px */
+}
+
+.blog-list li a {
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: space-between; /* Push title and date to opposite ends */
+  align-items: center; /* Vertically align title and date */
+  text-decoration: none; /* Remove underline from the link container */
+  color: inherit; /* Inherit color from parent */
+}
+
+.blog-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.blog-list h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2rem; /* Adjusted font size to be less prominent */
+  color: #333;
+  font-weight: normal; /* Make title not bold */
+}
+
+.blog-list a:hover h2 {
+ color: #007acc;
+}
+
+.post-date {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 0; /* Remove bottom margin as it's handled by flex alignment */
+  white-space: nowrap; /* Prevent date from wrapping */
+  margin-left: 15px; /* Add some space between title and date */
+}
+
+/* Post Styling */
+.blog-post-header {
+  margin-bottom: 1rem; /* Space before the <hr /> */
+}
+
+.blog-post h1 {
+  font-size: 2rem; /* Reduced font size */
+  margin-bottom: 0; /* Removed bottom margin as it's handled by flex container */
+  font-weight: normal; /* Making title not bold as per previous similar request */
+}
+
+.blog-post .post-date {
+  margin-bottom: 0; /* Removed bottom margin */
+  font-size: 0.9rem;
+  color: #777;
+  white-space: nowrap;
+  margin-left: 15px; /* Add some space between title and date */
+}
+
+.blog-post hr {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 30px 0;
+}
+
+.blog-post p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.blog-post h2 {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.blog-post h3 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.blog-post ul,
+.blog-post ol {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.blog-post li {
+  margin-bottom: 10px;
+}
+
+.blog-post code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.blog-post pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.blog-post pre {
+  color: #f0f0f0; /* Light text for code blocks */
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+/* Styles for the line containing tags and date below the post title */
+.post-meta-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem; /* Space between title and this meta line */
+  margin-bottom: 0; /* .blog-post-header handles margin before the <hr> */
+}
+
+.post-meta-line .tags {
+  /* Primarily a container, specific tag styling is below */
+}
+
+.post-meta-line .tag {
+  display: inline-block;
+  margin-right: 0.5rem; /* Useful if you have multiple tags */
+  font-size: 0.9rem;
+  color: #777; /* Matching typical meta text color */
+}
+
+.post-meta-line .post-date {
+  font-size: 0.9rem;
+  color: #777; /* Matching typical meta text color */
+  margin: 0; /* Remove default paragraph margins */
+  white-space: nowrap; /* Prevent date from wrapping */
+}
+
+.tags {
+  /* No specific styles needed here for now, .tag handles individual ones */
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.9rem; 
+  color: #555; /* Lightened tag color a bit */
+}
+
+.post-date {
+  font-size: 0.9rem; 
+  color: #555; /* Lightened date color a bit */
+  margin: 0; 
+}
+
+/* Additional styles for the post header if needed */
+.blog-post-header {
+  margin-bottom: 1rem; /* Add some space before the hr */
+} 
+
+.blog-list li a:hover .post-date {
+  color: #007acc;
+} 

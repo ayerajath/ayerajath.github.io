@@ -1,0 +1,92 @@
+.home-page .home-header h1 {
+  font-size: 2.8rem; /* Larger name, similar to reference */
+  font-weight: 700;
+  margin-top: 40px; /* More space at the top */
+  margin-bottom: 30px;
+  color: #000; /* Black color for the name */
+}
+
+.home-page section {
+  margin-bottom: 40px;
+}
+
+.home-page .intro-section p,
+.home-page .interests-section p,
+.home-page .contact-section p {
+  font-size: 1.15rem; /* Slightly larger paragraph text */
+  line-height: 1.7;
+  color: #333; /* Ensuring consistent text color */
+  margin-bottom: 15px;
+}
+
+.home-page .experience-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.home-page .experience-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.home-page .experience-section li {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.home-page .experience-section li strong {
+  font-weight: 600; /* Make company name a bit bolder */
+  color: #111;
+}
+
+.home-page .experience-section li em {
+  font-style: normal; /* Reference site uses normal style for tech stack */
+  color: #555;
+  font-size: 0.95em;
+}
+
+.home-page .contact-section a {
+  font-weight: 500;
+}
+
+/* Optional: Styles for project showcase if you uncomment it */
+.projects-showcase-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.project-item h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.project-item em {
+  font-size: 0.85rem;
+  color: #666;
+} 
