@@ -19,17 +19,30 @@ body {
 
 .App-header nav {
   max-width: 860px;
-  margin: 0 auto;
+  margin: 0 0;
   padding: 0 20px;
   display: flex;
   flex-direction: column; /* Stack nav items vertically */
   align-items: flex-start; /* Align items to the start (left) */
-  border-bottom: 1px solid #eee; /* Added here */
   padding-bottom: 10px; /* Added padding below nav items, above the new border */
 }
 
 .App-header nav .nav-top {
   margin-bottom: 5px; /* Reduced space between name and links */
+}
+
+.App-header nav .nav-top .header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between image and name */
+}
+
+.App-header nav .nav-top .profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover; /* Ensures the image covers the area properly */
+  border: 2px solid #eee; /* Optional: adds a subtle border */
 }
 
 .App-header nav .nav-top a {
@@ -75,7 +88,6 @@ body {
 
 main {
   flex-grow: 1;
-  padding-top: 20px;
   padding-bottom: 40px;
 }
 
@@ -272,4 +284,72 @@ main {
 
 .blog-list li a:hover .post-date {
   color: #007acc;
+} 
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* Space between image and nav group */
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.header-nav-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-nav-group .nav-top {
+  margin-bottom: 5px;
+}
+
+.header-nav-group .nav-top a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  margin-left: 0;
+}
+
+.header-nav-group .nav-bottom {
+  display: flex;
+  gap: 32px;
+}
+
+.header-nav-group .nav-bottom a {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.header-nav-group .nav-bottom a:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 600px) {
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 10px;
+  }
+  .profile-image {
+    width: 40px;
+    height: 40px;
+  }
+  .header-nav-group .nav-bottom {
+    gap: 20px;
+  }
 } 

@@ -34,7 +34,7 @@ const BlogListPage = () => {
         const rawContent = await postModules[path]();
         const frontmatter = parseFrontmatter(rawContent);
         console.log(path, frontmatter);
-        if (frontmatter.slug && frontmatter.title && frontmatter.date) {
+        if (frontmatter.slug && frontmatter.title && frontmatter.date && frontmatter.draft !== 'true') {
           postList.push({
             slug: frontmatter.slug,
             title: frontmatter.title,

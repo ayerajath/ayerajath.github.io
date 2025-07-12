@@ -18,18 +18,19 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <nav>
-            <div className="nav-top">
-              <Link to="/">Rajath Aithal</Link>
-            </div>
-            <div className="nav-bottom">
-              <Link to="/">About</Link>
-              <Link to="/posts">Posts</Link>
-              {/* <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a> */}
-            </div>
-          </nav>
+          <div className="header-flex">
+            <img src="/rajath.jpg" alt="Rajath Aithal" className="profile-image" />
+            <nav className="header-nav-group">
+              <div className="nav-top">
+                <Link to="/">Rajath Aithal</Link>
+              </div>
+              <div className="nav-bottom">
+                <Link to="/">About</Link>
+                <Link to="/posts">Posts</Link>
+              </div>
+            </nav>
+          </div>
         </header>
-
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -38,7 +39,6 @@ function App() {
             {/* <Route path="/about" element={<AboutPage />} /> */}
           </Routes>
         </main>
-
         {/* <footer className="App-footer">
           <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
         </footer> */}
