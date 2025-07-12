@@ -94,15 +94,16 @@ main {
 }
 
 .blog-list li {
-  padding-bottom: 8px; /* Reduced from 20px */
+  padding-bottom: 0;
 }
 
 .blog-list li a {
-  display: flex; /* Enable flexbox for alignment */
-  justify-content: space-between; /* Push title and date to opposite ends */
-  align-items: center; /* Vertically align title and date */
-  text-decoration: none; /* Remove underline from the link container */
-  color: inherit; /* Inherit color from parent */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 6px 0;
 }
 
 .blog-list li:last-child {
@@ -125,9 +126,25 @@ main {
 .post-date {
   color: #777;
   font-size: 0.9rem;
-  margin-bottom: 0; /* Remove bottom margin as it's handled by flex alignment */
-  white-space: nowrap; /* Prevent date from wrapping */
-  margin-left: 15px; /* Add some space between title and date */
+  margin-bottom: 0;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+@media (max-width: 600px) {
+  .blog-list li a {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  .blog-list h2 {
+    margin-bottom: 2px;
+  }
+  .post-date {
+    margin-left: 0;
+    margin-top: 2px;
+    padding-left: 0;
+  }
 }
 
 /* Post Styling */
