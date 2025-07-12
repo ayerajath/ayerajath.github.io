@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import BlogListPage from './components/BlogListPage';
 import BlogPostPage from './components/BlogPostPage';
 // import AboutPage from './components/AboutPage';
+import profileImg from './assets/rajath.jpg';
 
 // Placeholder components - we'll create these soon
 // const HomePage = () => <div className="container"><h1>Home</h1><p>Welcome to my blog!</p></div>;
@@ -19,7 +20,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <div className="header-flex">
-            <img src="/rajath.jpg" alt="Rajath Aithal" className="profile-image" />
+            <img src={profileImg} alt="Rajath Aithal" className="profile-image" />
             <nav className="header-nav-group">
               <div className="nav-top">
                 <Link to="/">Rajath Aithal</Link>
