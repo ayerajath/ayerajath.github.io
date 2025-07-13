@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
-import HomePage from './components/HomePage';
-import BlogListPage from './components/BlogListPage';
-import BlogPostPage from './components/BlogPostPage';
+import HomePage from './components/HomePage.jsx';
+import BlogListPage from './components/BlogListPage.jsx';
+import BlogPostPage from './components/BlogPostPage.jsx';
 // import AboutPage from './components/AboutPage';
 import profileImg from './assets/rajath.jpg';
+import posthog from 'posthog-js';
 
 // Placeholder components - we'll create these soon
 // const HomePage = () => <div className="container"><h1>Home</h1><p>Welcome to my blog!</p></div>;
@@ -15,6 +16,9 @@ import profileImg from './assets/rajath.jpg';
 // const AboutPage = () => <div className="container"><h1>About</h1><p>A little bit about me.</p></div>;
 
 function App() {
+  useEffect(() => {
+    posthog.capture('random_event', { foo: 'bar', time: Date.now() });
+  }, []);
   return (
     <Router>
       <div className="App">
