@@ -1,9 +1,11 @@
 body {
   margin: 0;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 400;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFCF0;
+  color: #100F0F;
 }
 
 .App {
@@ -42,18 +44,18 @@ body {
   height: 40px;
   border-radius: 50%; /* Makes it circular */
   object-fit: cover; /* Ensures the image covers the area properly */
-  border: 2px solid #eee; /* Optional: adds a subtle border */
+  border: 2px solid #E6E4D9; /* Updated to base-100 color */
 }
 
 .App-header nav .nav-top a {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #000;
+  color: #100F0F;
   margin-left: 0; /* Reset margin for the name link */
 }
 
 .App-header nav .nav-bottom a {
-  color: #333333;
+  color: #100F0F;
   margin-left: 0; /* Align all bottom links to the start */
   margin-right: 25px; /* Add spacing between bottom links */
   font-weight: 500;
@@ -94,9 +96,9 @@ main {
 .App-footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #E6E4D9;
   font-size: 0.9rem;
-  color: #777;
+  color: #6F6E69;
 }
 
 /* Post List Styling */
@@ -127,7 +129,7 @@ main {
   margin-top: 0;
   margin-bottom: 5px;
   font-size: 1.2rem; /* Adjusted font size to be less prominent */
-  color: #333;
+  color: #100F0F;
   font-weight: normal; /* Make title not bold */
 }
 
@@ -136,7 +138,7 @@ main {
 }
 
 .post-date {
-  color: #777;
+  color: #6F6E69;
   font-size: 0.9rem;
   margin-bottom: 0;
   white-space: nowrap;
@@ -173,7 +175,7 @@ main {
 .blog-post .post-date {
   margin-bottom: 0; /* Removed bottom margin */
   font-size: 0.9rem;
-  color: #777;
+  color: #6F6E69;
   white-space: nowrap;
   margin-left: 15px; /* Add some space between title and date */
 }
@@ -181,7 +183,7 @@ main {
 .blog-post hr {
   border: 0;
   height: 1px;
-  background: #eee;
+  background: #E6E4D9;
   margin: 30px 0;
 }
 
@@ -250,12 +252,12 @@ main {
   display: inline-block;
   margin-right: 0.5rem; /* Useful if you have multiple tags */
   font-size: 0.9rem;
-  color: #777; /* Matching typical meta text color */
+  color: #6F6E69; /* Updated to base-600 */
 }
 
 .post-meta-line .post-date {
   font-size: 0.9rem;
-  color: #777; /* Matching typical meta text color */
+  color: #6F6E69; /* Updated to base-600 */
   margin: 0; /* Remove default paragraph margins */
   white-space: nowrap; /* Prevent date from wrapping */
 }
@@ -268,12 +270,12 @@ main {
   display: inline-block;
   margin-right: 0.5rem;
   font-size: 0.9rem; 
-  color: #555; /* Lightened tag color a bit */
+  color: #6F6E69; /* Updated to base-600 */
 }
 
 .post-date {
   font-size: 0.9rem; 
-  color: #555; /* Lightened date color a bit */
+  color: #6F6E69; /* Updated to base-600 */
   margin: 0; 
 }
 
@@ -293,7 +295,7 @@ main {
   max-width: 860px;
   margin: 0 auto;
   padding: 0 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #E6E4D9;
   padding-bottom: 10px;
 }
 
@@ -302,7 +304,7 @@ main {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #eee;
+  border: 2px solid #E6E4D9;
 }
 
 .header-nav-group {
@@ -318,17 +320,17 @@ main {
 .header-nav-group .nav-top a {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #000;
+  color: #100F0F;
   margin-left: 0;
 }
 
 .header-nav-group .nav-bottom {
   display: flex;
-  gap: 32px;
+  gap: 4px;
 }
 
 .header-nav-group .nav-bottom a {
-  color: #333333;
+  color: #100F0F;
   font-weight: 500;
   font-size: 1rem;
   margin: 0;
