@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, NavLink } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './components/HomePage.jsx';
@@ -30,8 +30,8 @@ function App() {
                 <Link to="/">Rajath Aithal</Link>
               </div>
               <div className="nav-bottom">
-                <Link to="/">About</Link>
-                <Link to="/posts">Posts</Link>
+                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
+                <NavLink to="/posts" className={({ isActive }) => isActive ? 'active' : ''}>Posts</NavLink>
               </div>
             </nav>
           </div>

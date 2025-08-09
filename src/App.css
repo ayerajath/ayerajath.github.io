@@ -330,10 +330,15 @@ main {
 }
 
 .header-nav-group .nav-bottom a {
-  color: #100F0F;
+  color: #6F6E69; /* Lightened shade from #100F0F to base-600 */
   font-weight: 500;
   font-size: 1rem;
   margin: 0;
+}
+
+.header-nav-group .nav-bottom a.active {
+  color: #100F0F; /* Darker color for active state */
+  font-weight: 700; /* Bold for active state */
 }
 
 .header-nav-group .nav-bottom a:last-child {
