@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Blog.css';
 
 // Helper function to parse frontmatter (simplified)
 const parseFrontmatter = (text) => {
@@ -57,17 +58,18 @@ const BlogListPage = () => {
 
   return (
     <div className="container">
-      {/* <h1>Blog</h1> */}
-      <ul className="blog-list">
-        {posts.map(post => (
-          <li key={post.slug}>
-            <Link to={`/posts/${post.slug}`}>
-              <h2>{post.title}</h2>
-              <p className="post-date">{new Date(post.date).toLocaleDateString()}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="blog-list-container">
+        <ul className="blog-list">
+          {posts.map((post, index) => (
+            <li key={post.slug} className="blog-list-item reveal" style={{ animationDelay: `${index * 0.1 + 0.1}s` }}>
+              <Link to={`/posts/${post.slug}`} className="blog-list-link">
+                <span className="blog-post-title">{post.title}</span>
+                <span className="blog-post-date">{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -26,9 +26,6 @@ function App() {
           <div className="header-flex">
             <img src={profileImg} alt="Rajath Aithal" className="profile-image" />
             <nav className="header-nav-group">
-              <div className="nav-top">
-                <Link to="/">Rajath Aithal</Link>
-              </div>
               <div className="nav-bottom">
                 <Link to="/">About</Link>
                 <Link to="/posts">Posts</Link>

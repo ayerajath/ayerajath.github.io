@@ -1,0 +1,60 @@
+.panda-container {
+    position: fixed;
+    bottom: 20px;
+    /* Offset from bottom slightly */
+    left: -100px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.panda-container.running {
+    opacity: 1;
+    animation:
+        panda-run 6s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+        panda-gallop 0.4s ease-in-out infinite;
+}
+
+.panda-container.waving .waving-paw {
+    animation: panda-wave-paw 0.5s ease-in-out infinite;
+    transform-origin: 150px 150px;
+}
+
+@keyframes panda-wave-paw {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(20deg);
+    }
+}
+
+@keyframes panda-run {
+    0% {
+        left: -100px;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+@keyframes panda-gallop {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+.panda-svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}

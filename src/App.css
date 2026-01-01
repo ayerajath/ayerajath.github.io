@@ -1,13 +1,4 @@
-body {
-  margin: 0;
-  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #FFFCF0;
-  color: #100F0F;
-}
-
+/* Main App Layout */
 .App {
   display: flex;
   flex-direction: column;
@@ -15,348 +6,69 @@ body {
 }
 
 .App-header {
-  padding: 10px 0; /* Reduced top/bottom padding */
-  /* border-bottom: 1px solid #eee; */ /* Removed from here */
-}
-
-.App-header nav {
-  max-width: 860px;
-  margin: 0 0;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column; /* Stack nav items vertically */
-  align-items: flex-start; /* Align items to the start (left) */
-  padding-bottom: 10px; /* Added padding below nav items, above the new border */
-}
-
-.App-header nav .nav-top {
-  margin-bottom: 5px; /* Reduced space between name and links */
-}
-
-.App-header nav .nav-top .header-content {
+  height: 80px;
   display: flex;
   align-items: center;
-  gap: 12px; /* Space between image and name */
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 1000;
 }
-
-.App-header nav .nav-top .profile-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* Makes it circular */
-  object-fit: cover; /* Ensures the image covers the area properly */
-  border: 2px solid #E6E4D9; /* Updated to base-100 color */
-}
-
-.App-header nav .nav-top a {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #100F0F;
-  margin-left: 0; /* Reset margin for the name link */
-}
-
-.App-header nav .nav-bottom a {
-  color: #100F0F;
-  margin-left: 0; /* Align all bottom links to the start */
-  margin-right: 25px; /* Add spacing between bottom links */
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.App-header nav .nav-bottom a:last-child {
-  margin-right: 0;
-}
-
-.App-header nav a {
-  /* Remove general margin-left from here as it's handled by nav-top/nav-bottom */
-  /* margin-left: 25px; */ 
-  font-weight: 500;
-  font-size: 1rem;
-  text-decoration: none; /* Remove underline from links */
-}
-
-.App-header nav a:first-child {
-  /* These specific styles are now handled by .nav-top a */
-  /* margin-left: 0; */
-  /* font-size: 1.5rem; */
-  /* font-weight: 700; */
-  /* color: #000; */
-}
-
-.App-header nav div a:hover {
-  color: #007acc;
-  text-decoration: none;
-}
-
-
-main {
-  flex-grow: 1;
-  padding-bottom: 40px;
-}
-
-.App-footer {
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid #E6E4D9;
-  font-size: 0.9rem;
-  color: #6F6E69;
-}
-
-/* Post List Styling */
-.blog-list {
-  list-style: none;
-  padding: 0;
-}
-
-.blog-list li {
-  padding-bottom: 0;
-}
-
-.blog-list li a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  padding: 6px 0;
-}
-
-.blog-list li:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.blog-list h2 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 1.2rem; /* Adjusted font size to be less prominent */
-  color: #100F0F;
-  font-weight: normal; /* Make title not bold */
-}
-
-.blog-list a:hover h2 {
- color: #007acc;
-}
-
-.post-date {
-  color: #6F6E69;
-  font-size: 0.9rem;
-  margin-bottom: 0;
-  white-space: nowrap;
-  margin-left: 15px;
-}
-
-@media (max-width: 600px) {
-  .blog-list li a {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 0;
-  }
-  .blog-list h2 {
-    margin-bottom: 2px;
-  }
-  .post-date {
-    margin-left: 0;
-    margin-top: 2px;
-    padding-left: 0;
-  }
-}
-
-/* Post Styling */
-.blog-post-header {
-  margin-bottom: 1rem; /* Space before the <hr /> */
-}
-
-.blog-post h1 {
-  font-size: 2rem; /* Reduced font size */
-  margin-bottom: 0; /* Removed bottom margin as it's handled by flex container */
-  font-weight: normal; /* Making title not bold as per previous similar request */
-}
-
-.blog-post .post-date {
-  margin-bottom: 0; /* Removed bottom margin */
-  font-size: 0.9rem;
-  color: #6F6E69;
-  white-space: nowrap;
-  margin-left: 15px; /* Add some space between title and date */
-}
-
-.blog-post hr {
-  border: 0;
-  height: 1px;
-  background: #E6E4D9;
-  margin: 30px 0;
-}
-
-.blog-post p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.blog-post h2 {
-  font-size: 1.8rem;
-  margin-top: 40px;
-  margin-bottom: 15px;
-}
-
-.blog-post h3 {
-  font-size: 1.5rem;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.blog-post ul,
-.blog-post ol {
-  margin-bottom: 20px;
-  padding-left: 30px;
-}
-
-.blog-post li {
-  margin-bottom: 10px;
-}
-
-.blog-post code {
-  padding: 2px 5px;
-  border-radius: 4px;
-  font-size: 0.95em;
-}
-
-.blog-post pre code {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-}
-
-.blog-post pre {
-  color: #f0f0f0; /* Light text for code blocks */
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
-
-/* Styles for the line containing tags and date below the post title */
-.post-meta-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0.5rem; /* Space between title and this meta line */
-  margin-bottom: 0; /* .blog-post-header handles margin before the <hr> */
-}
-
-.post-meta-line .tags {
-  /* Primarily a container, specific tag styling is below */
-}
-
-.post-meta-line .tag {
-  display: inline-block;
-  margin-right: 0.5rem; /* Useful if you have multiple tags */
-  font-size: 0.9rem;
-  color: #6F6E69; /* Updated to base-600 */
-}
-
-.post-meta-line .post-date {
-  font-size: 0.9rem;
-  color: #6F6E69; /* Updated to base-600 */
-  margin: 0; /* Remove default paragraph margins */
-  white-space: nowrap; /* Prevent date from wrapping */
-}
-
-.tags {
-  /* No specific styles needed here for now, .tag handles individual ones */
-}
-
-.tag {
-  display: inline-block;
-  margin-right: 0.5rem;
-  font-size: 0.9rem; 
-  color: #6F6E69; /* Updated to base-600 */
-}
-
-.post-date {
-  font-size: 0.9rem; 
-  color: #6F6E69; /* Updated to base-600 */
-  margin: 0; 
-}
-
-/* Additional styles for the post header if needed */
-.blog-post-header {
-  margin-bottom: 1rem; /* Add some space before the hr */
-} 
-
-.blog-list li a:hover .post-date {
-  color: #007acc;
-} 
 
 .header-flex {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  gap: 24px; /* Space between image and nav group */
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 20px;
-  border-bottom: 1px solid #E6E4D9;
-  padding-bottom: 10px;
-}
-
-.profile-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #E6E4D9;
 }
 
 .header-nav-group {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: var(--spacing-lg);
 }
 
-.header-nav-group .nav-top {
-  margin-bottom: 5px;
-}
-
-.header-nav-group .nav-top a {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #100F0F;
-  margin-left: 0;
-}
-
-.header-nav-group .nav-bottom {
+.nav-bottom {
   display: flex;
-  gap: 4px;
+  gap: var(--spacing-lg);
 }
 
-.header-nav-group .nav-bottom a {
-  color: #6F6E69; /* Lightened shade from #100F0F to base-600 */
+.nav-bottom a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 500;
-  font-size: 1rem;
-  margin: 0;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
 }
 
-.header-nav-group .nav-bottom a.active {
-  color: #100F0F; /* Darker color for active state */
-  font-weight: 700; /* Bold for active state */
+.nav-bottom a:hover {
+  color: var(--text-main);
+  opacity: 1;
 }
 
-.header-nav-group .nav-bottom a:last-child {
-  margin-right: 0;
+.nav-bottom a.active {
+  color: var(--text-main);
+}
+
+/* Page Containers */
+main {
+  flex-grow: 1;
+  padding-bottom: var(--spacing-xxl);
+}
+
+/* Global Typography Refinement */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
 }
 
 @media (max-width: 600px) {
-  .header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 0 10px;
+  .App-header {
+    height: 60px;
   }
-  .profile-image {
-    width: 40px;
-    height: 40px;
-  }
-  .header-nav-group .nav-bottom {
-    gap: 20px;
-  }
-} 
+}

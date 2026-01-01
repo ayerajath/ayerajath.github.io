@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import './Blog.css';
+import ReadingProgressBar from './ReadingProgressBar.jsx';
 
 // Helper function to parse frontmatter and content
 const parseMarkdown = (text) => {
@@ -46,20 +48,20 @@ const BlogPostPage = () => {
         const postModules = import.meta.glob('../posts/*.md', { as: 'raw' });
         let found = false;
         for (const path in postModules) {
-            if (path.includes(`/${slug}.md`)) {
-                const rawContent = await postModules[path]();
-                const { frontmatter, content } = parseMarkdown(rawContent);
-                console.log(frontmatter);
-                console.log(slug);
-                if (frontmatter.slug === slug) {
-                    setPost({ frontmatter, content });
-                    found = true;
-                    break;
-                }
+          if (path.includes(`/${slug}.md`)) {
+            const rawContent = await postModules[path]();
+            const { frontmatter, content } = parseMarkdown(rawContent);
+            console.log(frontmatter);
+            console.log(slug);
+            if (frontmatter.slug === slug) {
+              setPost({ frontmatter, content });
+              found = true;
+              break;
             }
+          }
         }
         if (!found) {
-            setError('Post not found.');
+          setError('Post not found.');
         }
 
       } catch (e) {
@@ -91,21 +93,23 @@ const BlogPostPage = () => {
 
   return (
     <div className="container blog-post">
-      <div className="blog-post-header">
-        <h1>{post.frontmatter.title}</h1>
-        <div className="post-meta-line">
+      <ReadingProgressBar />
+      <header className="blog-post-header">
+        <h1 className="post-title">{post.frontmatter.title}</h1>
+        <div className="post-meta">
+          <time className="post-date">{new Date(post.frontmatter.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
           {tags.length > 0 && (
-            <div className="tags">
+            <div className="post-tags">
               {tags.map(tag => (
-                <span key={tag} className="tag">#{tag}</span>
+                <span key={tag} className="post-tag">{tag}</span>
               ))}
             </div>
           )}
-          <p className="post-date">{new Date(post.frontmatter.date).toLocaleDateString()}</p>
         </div>
-      </div>
-      <hr />
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      </header>
+      <article className="post-content">
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+      </article>
     </div>
   );
 };
