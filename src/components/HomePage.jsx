@@ -32,11 +32,11 @@ const HomePage = () => {
 
         <section className="home-section bio-container reveal" style={{ animationDelay: '0.3s' }}>
           <p className="bio-traits">
-            Curious. Agentic. Engineer. Product. Sports. Video Games.
+            Curious. Engineer.
           </p>
           <p className="bio-text">
-            I love building products that matter and understanding how things work.
-            Deeply interested in finance, stock markets, and human stories.
+            I love to build products that intrigue me!
+            Interested in a lot of things and always learning!
           </p>
         </section>
 
