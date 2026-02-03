@@ -1,6 +1,6 @@
 {
-  "short_name": "My Posts",
-  "name": "My Personal Posts",
+  "short_name": "Rajath Aithal",
+  "name": "Rajath Aithal Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -22,4 +22,4 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
-} 
+}
