@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rajathaithal.com/sitemap.xml
