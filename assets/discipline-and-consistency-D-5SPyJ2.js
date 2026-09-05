@@ -4,6 +4,7 @@ date: 2025-08-09 01:00:00
 slug: discipline-and-consistency
 tags: [random]
 draft: false
+featured: true
 ---
 
 I was staring at the Strava app. It’s just a tracker for my runs (yes, it does more), but for me, the reason I keep coming back is the analytics.
