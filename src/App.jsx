@@ -5,7 +5,6 @@ import './App.css';
 import HomePage from './components/HomePage.jsx';
 import BlogListPage from './components/BlogListPage.jsx';
 import BlogPostPage from './components/BlogPostPage.jsx';
-import CustomCursor from './components/CustomCursor.jsx';
 // import AboutPage from './components/AboutPage';
 import profileImg from './assets/rajath.jpg';
 import posthog from 'posthog-js';
@@ -24,7 +23,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <CustomCursor />
         <header className="App-header">
           <div className="container-wide header-flex">
             <nav className="header-nav-group">

@@ -9,13 +9,12 @@
 }
 
 .hero-content {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   flex-wrap: nowrap;
-  /* Prevent wrapping */
 }
 
 .hero-title {
@@ -140,10 +139,6 @@
 
 @media (max-width: 600px) {
   .hero-content {
-    flex-direction: row;
-    /* Force side-by-side */
-    justify-content: space-between;
-    align-items: center;
     gap: var(--spacing-sm);
   }
 

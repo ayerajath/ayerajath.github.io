@@ -8,7 +8,7 @@ import ReadingProgressBar from './ReadingProgressBar.jsx';
 const parseMarkdown = (text) => {
   const frontmatter = {};
   let content = text;
-  const lines = text.split('\n');
+  const lines = text.replace(/\r\n/g, '\n').split('\n');
   if (lines[0] === '---') {
     let i = 1;
     let contentStartIndex = 0;

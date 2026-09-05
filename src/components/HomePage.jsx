@@ -1,7 +1,6 @@
 import React from 'react';
 import './HomePage.css';
 import profileImg from '../assets/rajath.jpg';
-import RunningPanda from './RunningPanda.jsx';
 
 const HomePage = () => {
   return (
@@ -13,7 +12,6 @@ const HomePage = () => {
             src={profileImg}
             alt="Rajath Aithal"
             className="hero-avatar"
-            onMouseEnter={() => window.dispatchEvent(new CustomEvent('panda-wave'))}
           />
         </div>
       </header>
@@ -22,7 +20,7 @@ const HomePage = () => {
         <section className="home-section meta-container mono reveal" style={{ animationDelay: '0.2s' }}>
           <div className="meta-row">
             <span className="meta-label">Status</span>
-            <span className="meta-value">Engineering @ <a href="https://www.launchdarkly.com" target="_blank" rel="noopener noreferrer">LaunchDarkly</a></span>
+            <span className="meta-value">Engineering Backend and Data @ Stealth</span>
           </div>
           <div className="meta-row">
             <span className="meta-label">Location</span>
@@ -50,8 +48,6 @@ const HomePage = () => {
           </div>
         </section>
       </div>
-
-      <RunningPanda />
     </div>
   );
 };

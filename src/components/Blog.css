@@ -4,6 +4,21 @@
     padding-top: var(--spacing-xl);
 }
 
+.blog-loading {
+    color: var(--text-muted);
+}
+
+.blog-year-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.blog-year-label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding-bottom: var(--spacing-sm);
+}
+
 .blog-list {
     list-style: none;
     display: flex;
@@ -37,6 +52,32 @@
     letter-spacing: -0.04em;
     color: var(--text-main);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-post-marker {
+    color: var(--text-muted);
+    font-size: 0.6em;
+    margin-right: var(--spacing-sm);
+    vertical-align: middle;
+}
+
+.blog-post-meta {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+.blog-post-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.blog-post-tag::before {
+    content: '#';
 }
 
 .blog-post-date {
