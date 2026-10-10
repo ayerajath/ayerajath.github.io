@@ -1,0 +1,242 @@
+.pop {
+  position: relative;
+  display: inline-block;
+}
+
+.pop-trigger {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.pop-trigger:hover,
+.pop-trigger[aria-expanded='true'] {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* The card */
+.pop-card {
+  position: absolute;
+  left: -12px;
+  bottom: calc(100% + 10px);
+  z-index: 20;
+  display: block;
+  width: max-content;
+  max-width: min(260px, 78vw);
+  background: var(--bg);
+  border: 1px solid var(--faint);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 12px 32px -12px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  text-align: left;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.45;
+  white-space: normal;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px) scale(0.97);
+  transform-origin: 24px 100%;
+  filter: blur(3px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.2s ease,
+    visibility 0s linear 0.25s;
+}
+
+/* Invisible bridge so the pointer can travel from word to card */
+.pop-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+}
+
+.pop-card.is-below {
+  bottom: auto;
+  top: calc(100% + 10px);
+  transform: translateY(-6px) scale(0.97);
+  transform-origin: 24px 0;
+}
+
+.pop-card.is-below::after {
+  top: auto;
+  bottom: 100%;
+}
+
+.pop-card.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  filter: none;
+  transition:
+    opacity 0.18s ease,
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.2s ease,
+    visibility 0s;
+}
+
+.pop-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px 14px;
+}
+
+.pop-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.pop-mark {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.mark-strava { background: #fc5200; }
+.mark-fable { background: #2d4b3f; }
+.mark-letterboxd { background: #202830; }
+
+.pop-title {
+  font-weight: 500;
+}
+
+.pop-sub {
+  color: var(--muted);
+}
+
+.pop-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.pop-latest {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--faint);
+  color: var(--text);
+}
+
+a.pop-latest:hover .pop-title {
+  color: var(--accent);
+}
+
+.pop-poster {
+  width: 46px;
+  height: 69px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--faint);
+  background: var(--faint);
+}
+
+.pop-latest-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.pop-latest .pop-title {
+  transition: color 0.2s ease;
+}
+
+.pop-stars {
+  color: var(--accent);
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.pop-stats {
+  display: flex;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.pop-stats b {
+  font-weight: 500;
+}
+
+.pop-link {
+  margin-top: 10px;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.pop-link:hover {
+  color: var(--accent);
+}
+
+/* Mini map */
+.pop-map {
+  display: block;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--faint);
+}
+
+.map-land { fill: #f1efe9; }
+.map-park { fill: none; stroke: #cfe3c4; stroke-width: 22; }
+.map-road { fill: none; stroke: #ffffff; stroke-width: 5; }
+.map-lane { fill: none; stroke: #ffffff; stroke-width: 2; }
+.map-pin { fill: var(--accent); stroke: #fff; stroke-width: 2; }
+
+.map-pulse {
+  fill: var(--accent);
+  opacity: 0.3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pulse 1.8s ease-out infinite;
+}
+
+@keyframes map-pulse {
+  from { transform: scale(0.6); opacity: 0.45; }
+  to { transform: scale(2.2); opacity: 0; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .map-land { fill: #1d1d1b; }
+  .map-park { stroke: #23331f; }
+  .map-road { stroke: #3a3a37; }
+  .map-lane { stroke: #2c2c2a; }
+  .map-pin { stroke: #1d1d1b; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop-card,
+  .pop-card.is-open {
+    transition: none;
+    filter: none;
+  }
+}

@@ -24,7 +24,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && cp dist/index.html dist/404.html && gh-pages -d dist",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "predev": "node scripts/fetch-letterboxd.mjs",
+    "prebuild": "node scripts/fetch-letterboxd.mjs"
   },
   "eslintConfig": {
     "extends": [
