@@ -16,6 +16,8 @@ const bengaluruTime = () =>
 const useClock = () => {
   const [time, setTime] = useState(bengaluruTime);
   useEffect(() => {
+    // The prerendered HTML holds the build-time clock; correct it right away.
+    setTime(bengaluruTime());
     const id = setInterval(() => setTime(bengaluruTime()), 15000);
     return () => clearInterval(id);
   }, []);
@@ -42,7 +44,7 @@ const HomePage = () => {
         </div>
         <p className="intro-clock">
           <span className="clock-dot" aria-hidden="true" />
-          Bengaluru, {time}
+          Bengaluru, <span suppressHydrationWarning>{time}</span>
         </p>
       </header>
 

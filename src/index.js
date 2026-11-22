@@ -10,14 +10,22 @@ const options = {
   defaults: '2025-05-24',
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const app = (
   <React.StrictMode>
     <PostHogProvider apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY} options={options}>
       <App />
     </PostHogProvider>
   </React.StrictMode>
 );
+
+// Prerendered pages arrive with HTML already in #root: attach to it instead of
+// redrawing. The 404 fallback page has an empty #root and renders from scratch.
+const container = document.getElementById('root');
+if (container.hasChildNodes()) {
+  ReactDOM.hydrateRoot(container, app);
+} else {
+  ReactDOM.createRoot(container).render(app);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

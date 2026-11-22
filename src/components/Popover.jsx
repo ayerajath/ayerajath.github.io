@@ -9,10 +9,12 @@ const Popover = ({ label, children }) => {
   const rootRef = useRef(null);
   const cardRef = useRef(null);
   const closeTimer = useRef(null);
+  const openedAt = useRef(0);
   const id = useId();
 
   const show = () => {
     clearTimeout(closeTimer.current);
+    if (!open) openedAt.current = Date.now();
     // Open below the word when there is no room above it.
     const top = rootRef.current.getBoundingClientRect().top;
     setBelow(top < (cardRef.current?.offsetHeight || 0) + 24);
@@ -41,8 +43,10 @@ const Popover = ({ label, children }) => {
     <span
       ref={rootRef}
       className="pop"
-      onMouseEnter={show}
-      onMouseLeave={hide}
+      // Hover only for a real mouse: on touch screens a tap also fires enter and
+      // focus events, which opened the card just before the click closed it.
+      onPointerEnter={(e) => e.pointerType === 'mouse' && show()}
+      onPointerLeave={(e) => e.pointerType === 'mouse' && hide()}
       onFocus={show}
       onBlur={(e) => !rootRef.current.contains(e.relatedTarget) && hide()}
     >
@@ -51,7 +55,9 @@ const Popover = ({ label, children }) => {
         className="pop-trigger"
         aria-expanded={open}
         aria-controls={id}
-        onClick={() => (open ? setOpen(false) : show())}
+        // A click right after hover or focus opened the card keeps it open
+        // instead of toggling it shut.
+        onClick={() => (open && Date.now() - openedAt.current > 400 ? setOpen(false) : show())}
       >
         {label}
       </button>

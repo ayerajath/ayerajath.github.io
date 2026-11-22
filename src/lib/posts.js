@@ -29,6 +29,7 @@ const posts = Object.values(modules)
     return {
       slug: frontmatter.slug,
       title: frontmatter.title,
+      description: frontmatter.description,
       date: new Date(frontmatter.date),
       tags: parseTags(frontmatter.tags),
       featured: frontmatter.featured === 'true',

@@ -96,3 +96,5 @@ temp/
 
 # Vite
 .vite/ 
+# Prerender (SSR) build output
+dist-ssr/
