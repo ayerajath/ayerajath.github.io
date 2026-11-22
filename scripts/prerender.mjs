@@ -87,4 +87,16 @@ await writeFile(
 );
 console.log(`sitemap.xml: ${entries.length} URLs`);
 
+// RSS feed of the posts, for anyone following along.
+const items = posts.map((path) => {
+  const { post, description } = pageMeta(path);
+  const link = `${SITE.url}${path}`;
+  return `    <item>\n      <title>${esc(post.title)}</title>\n      <link>${link}</link>\n      <guid>${link}</guid>\n      <pubDate>${post.date.toUTCString()}</pubDate>\n      <description>${esc(description)}</description>\n    </item>`;
+});
+await writeFile(
+  join(dist, 'rss.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>${esc(SITE.name)}</title>\n    <link>${SITE.url}/</link>\n    <description>${esc(SITE.description)}</description>\n    <language>en</language>\n    <atom:link href="${SITE.url}/rss.xml" rel="self" type="application/rss+xml" />\n${items.join('\n')}\n  </channel>\n</rss>\n`
+);
+console.log(`rss.xml: ${items.length} posts`);
+
 await rm(ssrDir, { recursive: true, force: true });

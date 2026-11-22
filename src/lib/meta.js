@@ -5,7 +5,7 @@ import { getPost, getPosts } from './posts.js';
 export const SITE = {
   url: 'https://rajathaithal.com',
   name: 'Rajath Aithal',
-  description: 'Personal blog and portfolio of Rajath Aithal - Engineering Backend and Data.',
+  description: 'Rajath Aithal builds systems that run on their own, and keeps score: backend and data by day, games, agents and AI tools on the side.',
   image: 'https://rajathaithal.com/rajath.jpg',
 };
 
@@ -26,7 +26,7 @@ const excerpt = (markdown) => {
 };
 
 // Every path the site serves, for the prerender and the sitemap.
-export const routes = () => ['/', '/now', '/posts', ...getPosts().map((p) => `/posts/${p.slug}`)];
+export const routes = () => ['/', '/log', '/now', '/posts', ...getPosts().map((p) => `/posts/${p.slug}`)];
 
 export const pageMeta = (pathname) => {
   const path = pathname.replace(/\/+$/, '') || '/';
@@ -35,6 +35,9 @@ export const pageMeta = (pathname) => {
   if (path === '/') return base;
   if (path === '/now') {
     return { ...base, title: `Now · ${SITE.name}`, description: 'What Rajath Aithal is focused on right now.' };
+  }
+  if (path === '/log') {
+    return { ...base, title: `Log · ${SITE.name}`, description: 'Everything Rajath Aithal wrote, watched and shipped, newest first.' };
   }
   if (path === '/posts') {
     return { ...base, title: `Writing · ${SITE.name}`, description: 'Posts by Rajath Aithal.' };

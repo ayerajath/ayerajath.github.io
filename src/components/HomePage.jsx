@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import profileImg from '../assets/rajath.jpg';
 import { formatDate, getPosts } from '../lib/posts.js';
-import { updated } from '../data/now.js';
-import NowList from './NowList.jsx';
-import Popover, { OfficeCard } from './Popover.jsx';
+import { getLog } from '../lib/log.js';
+import { featured } from '../data/featured.js';
+import LogList from './LogList.jsx';
 
 const posts = getPosts();
+const log = getLog(8);
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
 
@@ -24,10 +25,13 @@ const useClock = () => {
   return time;
 };
 
-const Section = ({ title, i, children }) => (
-  <section className="section enter" style={{ '--i': i }}>
-    <h2 className="section-title">{title}</h2>
-    <div className="section-body">{children}</div>
+const Block = ({ title, i, aside, children }) => (
+  <section className="block enter" style={{ '--i': i }} aria-labelledby={`h-${title}`}>
+    <div className="block-head">
+      <h2 id={`h-${title}`} className="block-title">{title}</h2>
+      {aside}
+    </div>
+    {children}
   </section>
 );
 
@@ -36,35 +40,64 @@ const HomePage = () => {
 
   return (
     <>
-      <header className="intro enter">
-        <img src={profileImg} alt="Rajath Aithal" className="intro-photo" />
-        <div>
-          <h1 className="intro-name">Rajath Aithal</h1>
-          <p className="intro-role">Software Engineer</p>
+      <header className="hero enter">
+        <div className="hero-id">
+          <img src={profileImg} alt="" className="hero-photo" width="48" height="48" />
+          <div>
+            <h1 className="hero-name">Rajath Aithal</h1>
+            <p className="meta">
+              Bengaluru · <span suppressHydrationWarning>{time}</span>
+            </p>
+          </div>
         </div>
-        <p className="intro-clock">
-          <span className="clock-dot" aria-hidden="true" />
-          Bengaluru, <span suppressHydrationWarning>{time}</span>
+
+        <p className="hero-line">I build systems that run on their own, and I keep score.</p>
+
+        <p className="hero-body">
+          By day, backend and data at a stealth startup. On the side, a pipeline that ships browser games, an agent
+          that scouts for product ideas, and tools for working with AI. Off the keyboard: up at six, running, and
+          reading fifteen minutes a day.
         </p>
+
+        <nav className="hero-links" aria-label="Elsewhere">
+          <a href="https://twitter.com/ayerajath" {...ext}>X</a>
+          <a href="https://www.github.com/ayerajath" {...ext}>GitHub</a>
+          <a href="https://www.linkedin.com/in/rajathaithal/" {...ext}>LinkedIn</a>
+          <a href="mailto:rajathaithal@gmail.com">Email</a>
+        </nav>
       </header>
 
-      <Section title="Today" i={1}>
-        <div className="prose">
-          <p>
-            I work on backend and data at a{' '}
-            <Popover label="stealth startup"><OfficeCard /></Popover> in Bengaluru. I like building products that make me
-            curious, and I'm always learning, lately about the experience layer on top of the systems.
-          </p>
-          <p>I care about discipline and consistency. Up at six most days, a little better every day.</p>
-        </div>
-      </Section>
+      <Block title="Systems" i={1}>
+        <ul className="systems">
+          {featured.map((s) => {
+            const inner = (
+              <>
+                <span className="system-top">
+                  <span className="system-name">{s.name}</span>
+                  <span className="meta">{s.since}</span>
+                </span>
+                <span className="system-what">{s.what}</span>
+                <span className="system-score">{s.score}</span>
+              </>
+            );
+            return (
+              <li key={s.name}>
+                {s.url ? (
+                  <a className="system is-link" href={s.url} {...ext}>{inner}</a>
+                ) : (
+                  <div className="system">{inner}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </Block>
 
-      <Section title="Now" i={2}>
-        <NowList />
-        <Link to="/now" className="more-link">Updated {updated} →</Link>
-      </Section>
+      <Block title="Log" i={2} aside={<Link to="/log" className="block-more">Full log →</Link>}>
+        <LogList entries={log} />
+      </Block>
 
-      <Section title="Writing" i={3}>
+      <Block title="Writing" i={3}>
         <ul className="list">
           {posts.map((post) => (
             <li key={post.slug}>
@@ -75,16 +108,14 @@ const HomePage = () => {
             </li>
           ))}
         </ul>
-      </Section>
+      </Block>
 
-      <Section title="Elsewhere" i={4}>
-        <p className="prose">
-          <a className="inline-link" href="https://twitter.com/ayerajath" {...ext}>X</a>,{' '}
-          <a className="inline-link" href="https://www.linkedin.com/in/rajathaithal/" {...ext}>LinkedIn</a>,{' '}
-          <a className="inline-link" href="https://www.github.com/ayerajath" {...ext}>GitHub</a>, or say hi at{' '}
-          <a className="inline-link" href="mailto:rajathaithal@gmail.com">rajathaithal@gmail.com</a>.
+      <footer className="foot enter" style={{ '--i': 4 }}>
+        <p>
+          Follow along on <a href="https://twitter.com/ayerajath" {...ext}>X</a> or by{' '}
+          <a href="/rss.xml">RSS</a>. What I'm focused on lives on the <Link to="/now">now page</Link>.
         </p>
-      </Section>
+      </footer>
     </>
   );
 };

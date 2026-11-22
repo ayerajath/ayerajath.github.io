@@ -5,6 +5,7 @@ import HomePage from './components/HomePage.jsx';
 import BlogListPage from './components/BlogListPage.jsx';
 import BlogPostPage from './components/BlogPostPage.jsx';
 import NowPage from './components/NowPage.jsx';
+import LogPage from './components/LogPage.jsx';
 import { pageMeta } from './lib/meta.js';
 
 const NotFoundPage = () => (
@@ -35,6 +36,7 @@ const Pages = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/now" element={<NowPage />} />
+        <Route path="/log" element={<LogPage />} />
         <Route path="/posts" element={<BlogListPage />} />
         <Route path="/posts/:slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFoundPage />} />

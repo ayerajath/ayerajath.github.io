@@ -1,4 +1,13 @@
-import lastWatched from './letterboxd.json';
+import films from './letterboxd.json';
+
+// Newest diary entry, with the date written out for the popover.
+const lastFilm = Array.isArray(films) ? films[0] : films;
+const lastWatched = lastFilm && {
+  ...lastFilm,
+  watched: /^\d{4}-\d{2}-\d{2}$/.test(lastFilm.watched)
+    ? new Date(`${lastFilm.watched}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : lastFilm.watched,
+};
 
 // Content for the hover popovers. Strava and Fable `latest` are filled in by
 // hand; Letterboxd updates itself. Anything left empty is simply not shown.
