@@ -11,7 +11,7 @@ const FILMS = 6;
 
 const stars = (rating) => (rating ? '★'.repeat(Math.floor(rating)) + (rating % 1 ? '½' : '') : '');
 
-// Built on first use (not at import), so builds with the redesign flag off drop it.
+// Built on first use (not at import), so builds with the worklog flag off drop it.
 let all;
 const build = () => [
   ...getPosts().map((p) => ({

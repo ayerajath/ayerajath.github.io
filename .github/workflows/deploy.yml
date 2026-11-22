@@ -29,7 +29,7 @@ jobs:
           VITE_PUBLIC_POSTHOG_HOST: ${{ secrets.VITE_PUBLIC_POSTHOG_HOST }}
           VITE_PUBLIC_POSTHOG_KEY: ${{ secrets.VITE_PUBLIC_POSTHOG_KEY }}
           # Feature flags: set as repository variables (Settings → Secrets and variables → Actions → Variables)
-          VITE_FLAG_REDESIGN: ${{ vars.VITE_FLAG_REDESIGN }}
+          VITE_FLAG_WORKLOG: ${{ vars.VITE_FLAG_WORKLOG }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -1,4 +1,4 @@
-// The current live homepage. Shown while the redesign flag is off (see src/lib/flags.js).
+// The current live homepage. Shown while the worklog flag is off (see src/lib/flags.js).
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import profileImg from '../assets/rajath.jpg';

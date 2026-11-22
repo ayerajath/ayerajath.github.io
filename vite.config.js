@@ -7,7 +7,7 @@ export default defineConfig(({ isSsrBuild }) => ({
   // Feature flags as literal booleans, so code behind a flag that is off is
   // dropped from the bundle. See src/lib/flags.js.
   define: {
-    __FLAG_REDESIGN__: JSON.stringify(process.env.VITE_FLAG_REDESIGN === 'true'),
+    __FLAG_WORKLOG__: JSON.stringify(process.env.VITE_FLAG_WORKLOG === 'true'),
   },
   esbuild: {
     loader: "jsx",

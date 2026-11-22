@@ -1,12 +1,12 @@
 // Title, description and share tags for every page. Used by the build-time
 // prerender (scripts/prerender.mjs) and by the client when the route changes.
 import { getPost, getPosts } from './posts.js';
-import { REDESIGN } from './flags.js';
+import { WORKLOG } from './flags.js';
 
 export const SITE = {
   url: 'https://rajathaithal.com',
   name: 'Rajath Aithal',
-  description: REDESIGN
+  description: WORKLOG
     ? 'Rajath Aithal builds systems that run on their own, and keeps score: backend and data by day, games, agents and AI tools on the side.'
     : 'Personal blog and portfolio of Rajath Aithal - Engineering Backend and Data.',
   image: 'https://rajathaithal.com/rajath.jpg',
@@ -29,7 +29,7 @@ const excerpt = (markdown) => {
 };
 
 // Every path the site serves, for the prerender and the sitemap.
-export const routes = () => ['/', ...(REDESIGN ? ['/log'] : []), '/now', '/posts', ...getPosts().map((p) => `/posts/${p.slug}`)];
+export const routes = () => ['/', ...(WORKLOG ? ['/log'] : []), '/now', '/posts', ...getPosts().map((p) => `/posts/${p.slug}`)];
 
 export const pageMeta = (pathname) => {
   const path = pathname.replace(/\/+$/, '') || '/';
@@ -39,7 +39,7 @@ export const pageMeta = (pathname) => {
   if (path === '/now') {
     return { ...base, title: `Now · ${SITE.name}`, description: 'What Rajath Aithal is focused on right now.' };
   }
-  if (REDESIGN && path === '/log') {
+  if (WORKLOG && path === '/log') {
     return { ...base, title: `Log · ${SITE.name}`, description: 'Everything Rajath Aithal wrote, watched and shipped, newest first.' };
   }
   if (path === '/posts') {

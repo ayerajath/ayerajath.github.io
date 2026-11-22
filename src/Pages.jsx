@@ -8,7 +8,7 @@ import BlogPostPage from './components/BlogPostPage.jsx';
 import NowPage from './components/NowPage.jsx';
 import LogPage from './components/LogPage.jsx';
 import { pageMeta } from './lib/meta.js';
-import { REDESIGN } from './lib/flags.js';
+import { WORKLOG } from './lib/flags.js';
 
 const NotFoundPage = () => (
   <>
@@ -34,11 +34,11 @@ const Pages = () => {
   }, [pathname]);
 
   return (
-    <main key={pathname} className={REDESIGN ? 'page is-redesign' : 'page'}>
+    <main key={pathname} className={WORKLOG ? 'page is-redesign' : 'page'}>
       <Routes>
-        <Route path="/" element={REDESIGN ? <HomePage /> : <ClassicHomePage />} />
+        <Route path="/" element={WORKLOG ? <HomePage /> : <ClassicHomePage />} />
         <Route path="/now" element={<NowPage />} />
-        {REDESIGN && <Route path="/log" element={<LogPage />} />}
+        {WORKLOG && <Route path="/log" element={<LogPage />} />}
         <Route path="/posts" element={<BlogListPage />} />
         <Route path="/posts/:slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFoundPage />} />

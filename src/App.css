@@ -193,7 +193,7 @@
   border-radius: 6px;
 }
 
-/* ---- Redesign (flag on) ---- */
+/* ---- Redesign (worklog flag on) ---- */
 .page.is-redesign {
   max-width: 640px;
 }
@@ -478,7 +478,7 @@
   padding: 12px 0;
 }
 
-/* ---- Classic homepage (redesign flag off) ---- */
+/* ---- Classic homepage (worklog flag off) ---- */
 /* Header: photo, name, local time */
 .intro {
   display: flex;
