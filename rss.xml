@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rajath Aithal</title>
+    <link>https://rajathaithal.com/</link>
+    <description>Personal blog and portfolio of Rajath Aithal - Engineering Backend and Data.</description>
+    <language>en</language>
+    <atom:link href="https://rajathaithal.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Little Better Every Day</title>
+      <link>https://rajathaithal.com/posts/discipline-and-consistency</link>
+      <guid>https://rajathaithal.com/posts/discipline-and-consistency</guid>
+      <pubDate>Sat, 09 Aug 2025 01:00:00 GMT</pubDate>
+      <description>I was staring at the Strava app. It’s just a tracker for my runs (yes, it does more), but for me, the reason I keep coming back is the analytics.</description>
+    </item>
+    <item>
+      <title>Product Engineering - A bet for the future</title>
+      <link>https://rajathaithal.com/posts/trying-to-be-a-product-engineer</link>
+      <guid>https://rajathaithal.com/posts/trying-to-be-a-product-engineer</guid>
+      <pubDate>Thu, 12 Sep 2024 02:00:00 GMT</pubDate>
+      <description>When I started coding, I thought the experience layer wasn't for me. I was wrong.</description>
+    </item>
+    <item>
+      <title>Future of Programming</title>
+      <link>https://rajathaithal.com/posts/future-of-programming</link>
+      <guid>https://rajathaithal.com/posts/future-of-programming</guid>
+      <pubDate>Sat, 24 Aug 2024 01:00:00 GMT</pubDate>
+      <description>With the introduction of tools like Cursor. And the LLMs(especially Claude) getting better at programming and coding. These definitely look like the…</description>
+    </item>
+  </channel>
+</rss>
