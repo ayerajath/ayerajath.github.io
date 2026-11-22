@@ -11,7 +11,9 @@ const FILMS = 6;
 
 const stars = (rating) => (rating ? '★'.repeat(Math.floor(rating)) + (rating % 1 ? '½' : '') : '');
 
-const all = [
+// Built on first use (not at import), so builds with the redesign flag off drop it.
+let all;
+const build = () => [
   ...getPosts().map((p) => ({
     date: p.date,
     kind: 'wrote',
@@ -31,7 +33,10 @@ const all = [
   .filter((e) => !Number.isNaN(e.date.getTime()))
   .sort((a, b) => b.date - a.date);
 
-export const getLog = (limit) => (limit ? all.slice(0, limit) : all);
+export const getLog = (limit) => {
+  all = all || build();
+  return limit ? all.slice(0, limit) : all;
+};
 
 export const VERBS = {
   wrote: 'Wrote',

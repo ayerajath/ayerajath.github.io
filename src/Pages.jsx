@@ -2,11 +2,13 @@ import React, { useEffect, useLayoutEffect } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 
 import HomePage from './components/HomePage.jsx';
+import ClassicHomePage from './components/ClassicHomePage.jsx';
 import BlogListPage from './components/BlogListPage.jsx';
 import BlogPostPage from './components/BlogPostPage.jsx';
 import NowPage from './components/NowPage.jsx';
 import LogPage from './components/LogPage.jsx';
 import { pageMeta } from './lib/meta.js';
+import { REDESIGN } from './lib/flags.js';
 
 const NotFoundPage = () => (
   <>
@@ -32,11 +34,11 @@ const Pages = () => {
   }, [pathname]);
 
   return (
-    <main key={pathname} className="page">
+    <main key={pathname} className={REDESIGN ? 'page is-redesign' : 'page'}>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={REDESIGN ? <HomePage /> : <ClassicHomePage />} />
         <Route path="/now" element={<NowPage />} />
-        <Route path="/log" element={<LogPage />} />
+        {REDESIGN && <Route path="/log" element={<LogPage />} />}
         <Route path="/posts" element={<BlogListPage />} />
         <Route path="/posts/:slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFoundPage />} />

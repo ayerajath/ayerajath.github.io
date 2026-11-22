@@ -7,7 +7,6 @@ import { featured } from '../data/featured.js';
 import LogList from './LogList.jsx';
 
 const posts = getPosts();
-const log = getLog(8);
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
 
@@ -37,6 +36,7 @@ const Block = ({ title, i, aside, children }) => (
 
 const HomePage = () => {
   const time = useClock();
+  const log = getLog(8);
 
   return (
     <>
